@@ -9,7 +9,7 @@ class Projects extends Component {
 				{
 					title: 'Countlessmiles',
 					photo: require('../assets/cm.png'),
-					url: 'https:www.countlessmiles.com',
+					url: 'https://www.countlessmiles.com',
 					roles: [
 						{
 							title: 'Backend',
@@ -20,7 +20,7 @@ class Projects extends Component {
 				{
 					title: 'Zeedas',
 					photo: require('../assets/zd.png'),
-					url: 'https:www.countlessmiles.com',
+					url: 'https://www.zeedas.com',
 					roles: [
 						{
 							title: 'Backend',
@@ -31,7 +31,7 @@ class Projects extends Component {
 				{
 					title: 'Paperdaz',
 					photo: require('../assets/pd.png'),
-					url: 'https:www.countlessmiles.com',
+					url: 'https://www.paperdaz.com',
 					roles: [
 						{
 							title: 'Backend',
@@ -42,7 +42,7 @@ class Projects extends Component {
 				{
 					title: 'Nester POD',
 					photo: require('../assets/np.png'),
-					url: 'https:www.countlessmiles.com',
+					url: 'https://www.nesterpod.com',
 					roles: [
 						{
 							title: 'Backend',
