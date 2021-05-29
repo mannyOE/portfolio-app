@@ -1,108 +1,103 @@
-import React, { Component } from 'react';
-import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
-
+import React, {Component} from 'react'
 
 class Projects extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { activeTab: 0 };
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			activeTab: 0,
+			projects: [
+				{
+					title: 'Countlessmiles',
+					photo: require('../assets/cm.png'),
+					url: 'https:www.countlessmiles.com',
+					roles: [
+						{
+							title: 'Backend',
+							skills: ['Nodejs', 'Expressjs', 'Mongodb']
+						}
+					]
+				},
+				{
+					title: 'Zeedas',
+					photo: require('../assets/zd.png'),
+					url: 'https:www.countlessmiles.com',
+					roles: [
+						{
+							title: 'Backend',
+							skills: ['Nodejs', 'Expressjs', 'Mongodb']
+						}
+					]
+				},
+				{
+					title: 'Paperdaz',
+					photo: require('../assets/pd.png'),
+					url: 'https:www.countlessmiles.com',
+					roles: [
+						{
+							title: 'Backend',
+							skills: ['Nodejs', 'Expressjs', 'Mongodb']
+						}
+					]
+				},
+				{
+					title: 'Nester POD',
+					photo: require('../assets/np.png'),
+					url: 'https:www.countlessmiles.com',
+					roles: [
+						{
+							title: 'Backend',
+							skills: ['Nodejs', 'Expressjs', 'Mongodb']
+						},
+						{
+							title: 'Frontend',
+							skills: ['Vuejs', 'Axios']
+						}
+					]
+				}
+			]
+		}
+	}
 
-  toggleCategories() {
-
-    if(this.state.activeTab === 0){
-      return(
-        <div className="projects-grid">
-          {/* Project 1 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #1</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-
-          {/* Project 2 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #2</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-
-          {/* Project 3 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #3</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-        </div>
-
-
-      )
-    } else if(this.state.activeTab === 1) {
-      return (
-        <div><h1>This is Angular</h1></div>
-      )
-    } else if(this.state.activeTab === 2) {
-      return (
-        <div><h1>This is VueJS</h1></div>
-      )
-    } else if(this.state.activeTab === 3) {
-      return (
-        <div><h1>This is MongoDB</h1></div>
-      )
-    }
-
-  }
-
-
-
-  render() {
-    return(
-      <div>
-        <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-          <Tab>React</Tab>
-          <Tab>Angular</Tab>
-          <Tab>VueJS</Tab>
-          <Tab>MongoDB</Tab>
-        </Tabs>
-
-
-          <Grid>
-            <Cell col={12}>
-              <div className="content">{this.toggleCategories()}</div>
-            </Cell>
-          </Grid>
-
-
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div
+				style={{height: '92vh', overflowY: 'auto'}}
+				className='d-flex mt-4 flex-column align-items-center'
+			>
+				{this.state.projects.map((project, index) => {
+					return (
+						<div
+							style={{minHeight: '55vh'}}
+							key={index}
+							className='col-5 mb-5 border mb-5 px-0 d-flex flex-column align-items-start'
+						>
+							<div className='px-3'>
+								<a href={project.url} target='_blank' rel='noopener noreferrer'>
+									<h5>{project.title}</h5>
+								</a>
+							</div>
+							<div className='px-3 w-100'>
+								<div className='d-flex w-100 justify-content-between align-items-center'>
+									<h5>Roles</h5>
+									<div className='col-5'>
+										{project.roles.map((role, ind) => {
+											return (
+												<div key={ind}>
+													<div className='font-weight-bold'>{role.title}</div>
+													<div>{role.skills.join(', ')}</div>
+												</div>
+											)
+										})}
+									</div>
+								</div>
+							</div>
+							<img className='w-100' src={project.photo} alt='' srcset='' />
+						</div>
+					)
+				})}
+			</div>
+		)
+	}
 }
 
-export default Projects;
+export default Projects
