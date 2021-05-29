@@ -25,6 +25,10 @@ class Projects extends Component {
 						{
 							title: 'Backend',
 							skills: ['Nodejs', 'Expressjs', 'Mongodb']
+						},
+						{
+							title: 'Frontend',
+							skills: ['React', 'Redux', 'Axios']
 						}
 					]
 				},
